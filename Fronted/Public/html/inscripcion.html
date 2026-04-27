@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripciones - Colegio Padre Emiliano Tardif</title>
+    <link rel="stylesheet" href="/css/diseño.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;800&family=Arima:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script defer src="/js/script.js"></script>
+</head>
+<body class="ins-body">
+
+    <header class="main-header">
+    <nav class="navbar">
+        <img src="/images/node-40.png" alt="Logo" class="logo">
+        
+        <ul class="nav-links">
+            <li> <a href="Informacion.html" class="btn-conoce-mas">¿Quiénes somos?</a></li>
+            <li><a href="index.html" class="btn-conoce-mas">Inicio</a></li>
+            <li class="contact-phone">📞 (809) 921-1372</li>
+        </ul>
+    </nav>
+</header>
+
+    <main>
+        <section class="ins-hero">
+            <img src="/images/fondito.jpeg" alt="Fachada Colegio" class="hero-img-full">
+        </section>
+
+        <section class="conditions-header">
+            <h2>Condiciones</h2>
+        </section>
+
+        <section class="conditions-content">
+            <ul class="styled-list">
+                <li>SOLICITUD DE PAGO PUNTUAL.</li>
+                <li>NO HAY DEVOLUCIÓN DE DINERO NI DOCUMENTOS POR CONCEPTO DE INSCRIPCIÓN.</li>
+                <li>LA EVALUACIÓN DIAGNÓSTICA DE ADMISIÓN SERÁ IMPARTIDA CADA MIÉRCOLES A LAS 3:00 PM...</li>
+                <li>IMPORTANTE: APROBAR LA EVALUACIÓN DE ADMISIÓN NO LE GARANTIZA EL CUPO.</li>
+                <li>EL PROCESO DE INSCRIPCIÓN PUEDE REALIZARSE DE LUNES A VIERNES DE 8:00 A.M. A 4:30 P.M.</li>
+                <li>AL MOMENTO DE REALIZAR LA INSCRIPCIÓN DEBE TENER A MANO LA DOCUMENTACIÓN COMPLETA.</li>
+            </ul>
+        </section>
+
+        <section class="form-section">
+    <h3>¡Agenda una cita para inscribirte!</h3>
+    <form action="/api/citas" method="POST" id="formCita"> <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
+        </div>
+        <div class="form-group">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Número de teléfono" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+        </div>
+        <div class="form-group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Alguna duda..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Enviar</button>
+    </form> </section>
+
+<script defer src="/js/app.js"></script>
+    </main>
+
+</body>
+</html>

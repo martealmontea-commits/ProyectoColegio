@@ -1,0 +1,113 @@
+/* --- VARIABLES --- */
+:root {
+    --rojo: #b72025;
+    --amarillo: #f4d21f;
+    --blanco: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Abhaya Libre', serif;
+    background-color: var(--blanco);
+    overflow-x: hidden;
+}
+
+/* --- HEADER GLASS (Copiado de Bonito.css) --- */
+.main-header {
+    position: fixed;
+    top: 0; 
+    width: 100%; 
+    height: 80px; 
+    z-index: 1000;
+    
+    /* El truco del Glass Effect: color plano + transparencia + desenfoque */
+    background-color: rgba(198, 40, 40, 0.85); /* 85% de opacidad para que se note el efecto */
+    backdrop-filter: blur(15px); /* Desenfoque intenso */
+    -webkit-backdrop-filter: blur(15px); /* Para Safari */
+    
+    /* Pequeña línea divisoria para dar profundidad */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    
+    display: flex; 
+    align-items: center; 
+    padding: 0 5%;
+}
+
+.navbar { 
+    width: 100%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+/* Logo más grande y alineado como en image_5.png */
+.logo { 
+    height: 70px; /* Más grande que antes */
+    margin-right: 20px; 
+}
+
+.nav-links { 
+    list-style: none; 
+    display: flex; 
+    gap: 30px; 
+    align-items: center; 
+}
+
+.nav-links a { 
+    color: white; 
+    text-decoration: none; 
+    font-weight: 500; 
+    font-size: 1.1rem; 
+}
+
+/* Botón de teléfono redondo y más grande como en image_4.png */
+.contact-phone { 
+    color: white; 
+    font-weight: bold; 
+    background: rgba(0,0,0,0.25); /* Un poco más oscuro */
+    padding: 10px 25px; 
+    border-radius: 50px; /* Más redondo */
+}
+
+/* --- CONTENIDO --- */
+.ins-hero { margin-top: 80px; width: 100%; }
+.hero-img-full { width: 100%; height: 450px; object-fit: cover; }
+
+.conditions-header {
+    background-color: var(--amarillo);
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.conditions-content { padding: 40px 10%; }
+.styled-list li { margin-bottom: 15px; font-size: 1.1rem; line-height: 1.6; }
+
+/* Formulario Estilo Preppy */
+.form-section { padding: 40px 10%; max-width: 1200px; margin: 0 auto; }
+.ins-form {
+    max-width: 600px;
+    padding: 30px;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    background: #fff;
+}
+.shadow-preppy { box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+.form-group input, .form-group textarea {
+    width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px;
+}
+
+.btn-submit {
+    width: 100%; padding: 15px; background: #222; color: white;
+    border: none; border-radius: 8px; cursor: pointer; font-size: 1.1rem;
+}
+.btn-submit:hover { background: var(--rojo); }
+
+/* Acreditaciones */
+.acreditaciones-section { padding: 60px; text-align: center; border-top: 1px solid #eee; }
+.footer-logos { max-width: 900px; width: 100%; margin-top: 20px; }
