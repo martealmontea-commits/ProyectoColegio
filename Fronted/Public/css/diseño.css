@@ -1,4 +1,4 @@
-/* --- VARIABLES --- */
+
 :root {
     --rojo: #b72025;
     --amarillo: #f4d21f;
@@ -13,7 +13,7 @@ body {
     overflow-x: hidden;
 }
 
-/* --- HEADER GLASS (Copiado de Bonito.css) --- */
+
 .main-header {
     position: fixed;
     top: 0; 
@@ -21,12 +21,12 @@ body {
     height: 80px; 
     z-index: 1000;
     
-    /* El truco del Glass Effect: color plano + transparencia + desenfoque */
-    background-color: rgba(198, 40, 40, 0.85); /* 85% de opacidad para que se note el efecto */
-    backdrop-filter: blur(15px); /* Desenfoque intenso */
-    -webkit-backdrop-filter: blur(15px); /* Para Safari */
+   
+    background-color: rgba(198, 40, 40, 0.85); 
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px); 
     
-    /* Pequeña línea divisoria para dar profundidad */
+   
     border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
     
     display: flex; 
@@ -41,9 +41,9 @@ body {
     align-items: center; 
 }
 
-/* Logo más grande y alineado como en image_5.png */
+
 .logo { 
-    height: 70px; /* Más grande que antes */
+    height: 70px; 
     margin-right: 20px; 
 }
 

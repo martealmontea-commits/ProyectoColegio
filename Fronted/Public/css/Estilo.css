@@ -1,6 +1,6 @@
-/* --- CONFIGURACIÓN DE COLORES (flat como en el diseño) --- */
+
 :root {
-    --rojo: #C62828; /* El color plano exacto del diseño */
+    --rojo: #C62828; 
     --rojo-oscuro: #8E1B1B;
     --amarillo: #F4D21F;
     --blanco: #FFFFFF;
@@ -15,7 +15,7 @@ body {
     overflow-x: hidden;
 }
 
-/* --- HEADER CON GLASS EFFECT (Base plana + desenfoque) --- */
+
 .main-header {
     position: fixed;
     top: 0; 
@@ -23,12 +23,12 @@ body {
     height: 80px; 
     z-index: 1000;
     
-    /* El truco del Glass Effect: color plano + transparencia + desenfoque */
-    background-color: rgba(198, 40, 40, 0.85); /* 85% de opacidad para que se note el efecto */
-    backdrop-filter: blur(15px); /* Desenfoque intenso */
-    -webkit-backdrop-filter: blur(15px); /* Para Safari */
     
-    /* Pequeña línea divisoria para dar profundidad */
+    background-color: rgba(198, 40, 40, 0.85); 
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px);
+    
+    
     border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
     
     display: flex; 
@@ -43,9 +43,9 @@ body {
     align-items: center; 
 }
 
-/* Logo más grande y alineado como en image_5.png */
+
 .logo { 
-    height: 70px; /* Más grande que antes */
+    height: 70px; 
     margin-right: 20px; 
 }
 
@@ -63,17 +63,16 @@ body {
     font-size: 1.1rem; 
 }
 
-/* Botón de teléfono redondo y más grande como en image_4.png */
+
 .contact-phone { 
     color: white; 
     font-weight: bold; 
-    background: rgba(0,0,0,0.25); /* Un poco más oscuro */
+    background: rgba(0,0,0,0.25); 
     padding: 10px 25px; 
-    border-radius: 50px; /* Más redondo */
+    border-radius: 50px; 
 }
 
-/* --- HERO (Ajuste para que no choque con el Header) --- */
-/* --- ARREGLO DEL HERO Y EL BOTÓN --- */
+
 .hero {
     display: flex;
     align-items: center;
@@ -83,35 +82,34 @@ body {
     min-height: 80vh;
 }
 
-/* Contenedor principal del texto y botón */
+
 .hero-content {
     display: flex;
-    flex-direction: row; /* Los pone uno al lado del otro */
-    align-items: center; /* Los centra verticalmente entre sí */
-    gap: 40px; /* El espacio exacto entre el lema y el botón */
+    flex-direction: row;
+    align-items: center; 
+    gap: 40px; 
     position: relative;
     z-index: 2;
-    padding-left: 5%; /* Margen desde la izquierda */
+    padding-left: 5%; 
 }
 
-/* Ajuste del lema */
+
 .hero-quote {
     max-width: 500px;
     height: auto;
 }
 
-/* Ajuste del botón para que no se vuele */
+
 .btn-conoce-mas {
-    width: 500px; /* Tamaño ideal para que no se vea gigante */
+    width: 500px; 
     height: auto;
     transition: transform 0.3s ease;
 }
 
 .btn-conoce-mas:hover {
-    transform: scale(1.05); /* Efecto sutil al pasar el mouse */
+    transform: scale(1.05); 
 }
 
-/* Las figuras se quedan en su esquina sin molestar */
 .geo-decor {
     position: absolute;
     right: 0;
@@ -121,7 +119,7 @@ body {
     pointer-events: none;
 }
 
-/* --- ESPACIO PARA NARCISO --- */
+
 .profile-card {
     display: flex;
     flex-direction: column;
@@ -129,12 +127,12 @@ body {
 }
 
 .profile-img {
-    margin-bottom: 25px; /* SEPARACIÓN: Aquí le damos aire al nombre */
+    margin-bottom: 25px; 
     border-radius: 15px;
     box-shadow: 10px 10px 0px #F4D21F;
 }
 
-/* --- RESTO DEL CSS (Se mantiene igual) --- */
+
 .philosophy { padding: 80px 10%; display: flex; gap: 50px; align-items: center; position: relative; z-index: 2; }
 
 .text-red { color: var(--rojo); font-weight: 800; font-size: 3rem; margin-bottom: 20px; }
@@ -163,5 +161,5 @@ body {
     .philosophy, .hero, .info-grid { flex-direction: column; text-align: center; }
     .hero-content { align-items: center; }
     .objectives-list { columns: 1; }
-    .nav-links { display: none; } /* Ocultar menú en móvil */
+    .nav-links { display: none; } 
 }
