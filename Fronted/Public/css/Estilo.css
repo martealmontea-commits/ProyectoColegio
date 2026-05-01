@@ -97,11 +97,12 @@ body {
 .hero-quote {
     max-width: 500px;
     height: auto;
+    
 }
 
 
 .btn-conoce-mas {
-    width: 500px; 
+    width: 480px; 
     height: auto;
     transition: transform 0.3s ease;
 }

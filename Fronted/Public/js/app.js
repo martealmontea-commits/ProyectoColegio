@@ -1,5 +1,3 @@
-console.log("APP CONECTADA");
-
 const form = document.getElementById('formCita');
 
 form.addEventListener('submit', async (e) => {
@@ -28,7 +26,7 @@ form.addEventListener('submit', async (e) => {
         }
 
     } catch (err) {
-        console.log("ERROR FETCH:", err); // 👈 más simple que console.error
+        console.log("ERROR FETCH:", err); 
         alert("No se pudo conectar con el servidor");
     }
 });

@@ -13,17 +13,7 @@
 </head>
 <body class="ins-body">
 
-    <header class="main-header">
-    <nav class="navbar">
-        <img src="../images/node-40.png" alt="Logo" class="logo">
-        
-        <ul class="nav-links">
-            <li> <a href="Informacion.html" class="btn-conoce-mas">¿Quiénes somos?</a></li>
-            <li><a href="index.html" class="btn-conoce-mas">Inicio</a></li>
-            <li class="contact-phone">📞 (809) 921-1372</li>
-        </ul>
-    </nav>
-</header>
+   {{> header}}
 
     <main>
         <section class="ins-hero">
@@ -65,6 +55,9 @@
         </div>
         <button type="submit" class="btn-submit">Enviar</button>
     </form> </section>
+
+
+    {{> footer}}
 
 <script defer src="../js/app.js"></script>
     </main>

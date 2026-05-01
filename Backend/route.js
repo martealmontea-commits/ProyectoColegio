@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('./conexion');
 
 router.post('/citas', (req, res) => {
-    console.log("🔥 ENTRÓ AL POST");
+    
 
     const nombre = req.body.nombre || "";
     const telefono = req.body.telefono || "";
@@ -20,17 +20,21 @@ router.post('/citas', (req, res) => {
     try {
         db.query(sql, [nombre, telefono, mensaje, email, 'pendiente'], (err, result) => {
             if (err) {
-                console.log("💥 ERROR MYSQL:", err);
+               
                 return res.send("ERROR MYSQL: " + err.sqlMessage);
             }
 
-            console.log("✅ INSERT OK");
+            
             res.send("Cita guardada correctamente");
         });
     } catch (e) {
-        console.log("💥 ERROR GENERAL:", e);
+        
         res.send("ERROR GENERAL: " + e.message);
     }
 });
 
+
+
 module.exports = router;
+
+
