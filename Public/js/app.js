@@ -1,5 +1,6 @@
 const form = document.getElementById('formCita');
 
+
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
 

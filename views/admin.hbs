@@ -1,0 +1,153 @@
+
+<main class="contenido">
+
+<div class="Cuadro">
+<h1>Formulario de Inscripcion</h1>
+<form id="form_admin" onsubmit="guardarFormulario(event)">
+<fieldset>
+<legend>Datos del Niño</legend>
+
+<label for="nombreNino" class="name">Nombre</label>
+<input type="text" id="nombreNino" name="nombre" placeholder="Escriba el nombre aqui..." required>
+<label for="Apellido" class="lastname">Apellidos</label>
+<input type="text" id="Apellido" name="Apellido" placeholder="Escriba los apellidos aqui..." required>
+<label for="edad" class="age">Edad</label>
+<input type="number" id="edad" name="edad" placeholder="Escriba la edad aqui..." required>
+<legend>Genero</legend>
+<label for="sexo" class="genero">Femenino</label>
+<input type="radio" id="sexo" name="sexo" value="Femenino">
+<label for="sexo" class="genero">Masculino</label>
+<input type="radio" id="sexo" name="sexo" value="Masculino">
+<legend></legend>
+<label for="Lugar" class="lugarnacimiento">Lugar de nacimiento</label>
+<input type="text" id="Lugar" name="lugar" placeholder="Escriba el lugar aqui...">
+<label for="nacionalidad" class="nacionalidad">Nacionalidad</label>
+<input type="text" id="nacionalidad" name="nacionalidad" placeholder="Dominicano, Haitiano...">
+<label for="mensualidad" class="monto">Mensualidad</label>
+<input type="number" id="mensualidad" name="mensualidad" placeholder="Escriba el monto aqui...">
+<legend>¿Ha asistido a otro centro?</legend>
+<label for="asistencia" class="asistencia">Si</label>
+<input type="radio" id="asistencia" name="asistencia" value="Si">
+<label for="asistencia" class="asistencia">No</label>
+<input type="radio" id="asistencia" name="asistencia" value="No">
+<legend></legend>
+<label for="grado" class="grado">Grado</label>
+<input type="text" id="grado" name="grado" placeholder="Escriba el grado aqui...">
+<label for="tanda" class="tanda">Tanda</label>
+<input type="text" id="tanda" name="tanda" placeholder="Mañana,Tarde...">
+<legend>Motivacion del niño al asistir al centro</legend>
+<label for="motivacion" class="motivacion"></label>
+<input type="text" id="motivacion" name="motivacion" placeholder="Escriba aqui">
+</fieldset>
+<fieldset>
+<legend>Datos de Padre/Representante</legend>
+<label for="nombrePadre" class="name">Nombre</label>
+<input type="text" id="nombrePadre" name="nombre" placeholder="Escriba el nombre aqui..." required>
+<label for="telefono" class="phone">Teléfono</label>
+<input type="text" id="telefono" name="telefono" placeholder="Escriba el número aqui..." required>
+<label for="correo" class="email">Correo Electrónico</label>
+<input type="email" id="correo" name="correo" placeholder="Escriba el correo aqui..." required>
+<legend></legend>
+<label for="cedula">Cédula</label>
+<input type="text" id="cedula" name="cedula" placeholder="Escriba la cedula aqui..." required>
+
+<label for="fecha_nacimiento">Fecha de nacimiento</label>
+<input type="date" id="fecha_nacimiento" name="fecha_nacimiento">
+<legend></legend>
+<label for="ocupacion">Ocupación</label>
+<input type="text" id="ocupacion" name="ocupacion" placeholder="Escriba la ocupacion...">
+
+<label for="lugar_trabajo">Lugar de trabajo</label>
+<input type="text" id="lugar_trabajo" name="lugar_trabajo" placeholder="Escriba el lugar de trabajo...">
+
+<label for="telefono_laboral">Teléfono laboral</label>
+<input type="text" id="telefono_laboral" name="telefono_laboral" placeholder="Escriba el telefono laboral...">
+
+<label for="estado">Estado</label>
+<input type="text" id="estado" name="estado" placeholder="Ej: Soltero, Casado...">
+
+<fieldset>
+<legend>Datos del Embarazo</legend>
+
+<label for="semanas_gestacion">Semanas de gestación</label>
+<input type="number" id="semanas_gestacion" name="semanas_gestacion" placeholder="Escriba las semanas...">
+
+<legend>Tipo de parto</legend>
+<label>Natural</label>
+<input type="radio" name="tipo_parto" value="Natural">
+<label>Cesárea</label>
+<input type="radio" name="tipo_parto" value="Cesarea">
+
+</fieldset>
+<fieldset>
+<legend>Hábitos del Niño</legend>
+
+<label for="hora_despierta">Hora que despierta</label>
+<input type="time" id="hora_despierta" name="hora_despierta">
+
+<label for="hora_duerme">Hora que duerme</label>
+<input type="time" id="hora_duerme" name="hora_duerme">
+
+<label for="se_despierta_noche">¿Se despierta en la noche?</label>
+<input type="text" id="se_despierta_noche" name="se_despierta_noche" placeholder="Si / No / Explicación">
+
+<label for="toma_siesta">¿Toma siesta?</label>
+<input type="text" id="toma_siesta" name="toma_siesta">
+
+<label for="comparte_habitacion">¿Comparte habitación?</label>
+<input type="text" id="comparte_habitacion" name="comparte_habitacion" placeholder="Escriba si o no">
+
+<label for="con_quien">¿Con quién?</label>
+<input type="text" id="con_quien" name="con_quien" placeholder="Hermano, Padre...">
+
+<label for="juguete_favorito">Juguete favorito</label>
+<input type="text" id="juguete_favorito" name="juguete_favorito" placeholder="Escriba el juguete...">
+
+
+</fieldset>
+<fieldset>
+
+<legend>Salud del Niño</legend>
+
+<label for="problemas_respiratorios">Problemas respiratorios</label>
+<input type="text" id="problemas_respiratorios" name="problemas_respiratorios">
+
+<label for="condiciones_especiales">Condiciones especiales</label>
+<input type="text" id="condiciones_especiales" name="condiciones_especiales">
+
+<label for="usa_lentes">¿Usa lentes?</label>
+<input type="text" id="usa_lentes" name="usa_lentes">
+
+<label for="ha_convulsionado">¿Ha convulsionado?</label>
+<input type="text" id="ha_convulsionado" name="ha_convulsionado">
+
+<label for="edad_camino">Edad que caminó</label>
+<input type="number" id="edad_camino" name="edad_camino">
+
+<label for="edad_hablo">Edad que habló</label>
+<input type="number" id="edad_hablo" name="edad_hablo">
+
+<label for="dificultad_habla">Dificultad para hablar</label>
+<input type="text" id="dificultad_habla" name="dificultad_habla">
+
+<label for="enfermedades">Enfermedades</label>
+<input type="text" id="enfermedades" name="enfermedades">
+
+<label for="alergias">Alergias</label>
+<input type="text" id="alergias" name="alergias">
+
+<label for="medicamentos">Medicamentos</label>
+<input type="text" id="medicamentos" name="medicamentos">
+
+<label for="motivo_medicamentos">Motivo de medicamentos</label>
+<input type="text" id="motivo_medicamentos" name="motivo_medicamentos">
+
+<label for="controla_esfinteres">¿Controla esfínteres?</label>
+<input type="text" id="controla_esfinteres" name="controla_esfinteres">
+
+</fieldset>
+<button type="submit" class="Enviar">Enviar</button>
+</form>
+</div>
+</main>
+</div>
