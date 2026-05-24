@@ -1,0 +1,144 @@
+{{#if exito}}
+<div class="alerta-exito">Registro guardado correctamente.</div>
+{{/if}}
+{{#if error}}
+<div class="alerta-error">Ocurrió un error al guardar el registro.</div>
+{{/if}}
+
+<div class="tabs">
+    <button class="tab active" id="tab-empleado" onclick="mostrarTab('empleado')">Crear empleado</button>
+    <button class="tab" id="tab-usuario" onclick="mostrarTab('usuario')">Crear usuario</button>
+</div>
+
+<div id="panel-empleado">
+    {{#if esAdmin}}
+    <div class="form-wrap">
+        <div class="form-encabezado">
+            <span>Nuevo empleado</span>
+        </div>
+        <div class="form-body">
+            <form action="/api/empleado" method="POST">
+                <div class="grid3">
+                    <div class="campo">
+                        <label>Nombre</label>
+                        <input type="text" name="nombre" placeholder="Nombre" required>
+                    </div>
+                    <div class="campo">
+                        <label>Apellido</label>
+                        <input type="text" name="apellido" placeholder="Apellido" required>
+                    </div>
+                    <div class="campo">
+                        <label>Cédula</label>
+                        <input type="text" name="cedula" placeholder="000-0000000-0" required>
+                    </div>
+                </div>
+                <div class="grid3">
+                    <div class="campo">
+                        <label>Teléfono</label>
+                        <input type="text" name="telefono" placeholder="809-000-0000" required>
+                    </div>
+                    <div class="campo">
+                        <label>Correo</label>
+                        <input type="email" name="correo" placeholder="correo@email.com" required>
+                    </div>
+                    <div class="campo">
+                        <label>Cargo</label>
+                        <input type="text" name="cargo" placeholder="Cargo" required>
+                    </div>
+                </div>
+                <div class="grid3">
+                    <div class="campo">
+                        <label>Fecha de contratación</label>
+                        <input type="date" name="fecha_contratacion" required>
+                    </div>
+                    <div class="campo">
+                        <label>Salario (RD$)</label>
+                        <input type="number" name="salario" placeholder="0.00" step="0.01" required>
+                    </div>
+                    <div class="campo">
+                        <label>Estado</label>
+                        <select name="estado">
+                            <option value="activo">Activo</option>
+                            <option value="inactivo">Inactivo</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-footer">
+                    <button type="button" class="btn-cancelar" onclick="window.location='/admin'">Cancelar</button>
+                    <button type="submit" class="btn-guardar">Guardar empleado</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    {{else}}
+    <div class="acceso-denegado">
+        <i class="ti ti-lock"></i>
+        <p>Acceso denegado</p>
+        <span>Solo los administradores pueden crear empleados</span>
+    </div>
+    {{/if}}
+</div>
+
+<div id="panel-usuario" style="display:none">
+    <div class="form-wrap">
+        <div class="form-encabezado">
+            <span>Nuevo usuario</span>
+        </div>
+        <div class="form-body">
+            <form action="/api/usuario" method="POST">
+                <div class="grid2">
+                    <div class="campo">
+                        <label>Empleado</label>
+                        <select name="id_empleado" required>
+                            <option value="">Seleccionar empleado</option>
+                            {{#each empleados}}
+                            <option value="{{id_empleado}}">{{nombre}} {{apellido}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="campo">
+                        <label>Usuario</label>
+                        <input type="text" name="usuario" placeholder="nombre.apellido" required>
+                    </div>
+                </div>
+                <div class="grid2">
+                    <div class="campo">
+                        <label>Contraseña</label>
+                        <input type="password" name="contrasena" placeholder="••••••••" required>
+                    </div>
+                    <div class="campo">
+                        <label>Rol</label>
+                        <select name="rol" required>
+                            <option value="administrador">Administrador</option>
+                            <option value="empleado">Empleado</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid2">
+                    <div class="campo">
+                        <label>Estado</label>
+                        <select name="estado">
+                            <option value="activo">Activo</option>
+                            <option value="inactivo">Inactivo</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-footer">
+                    <button type="button" class="btn-cancelar" onclick="window.location='/admin'">Cancelar</button>
+                    <button type="submit" class="btn-guardar">Guardar usuario</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+function mostrarTab(tab) {
+    document.getElementById('tab-empleado').classList.remove('active');
+    document.getElementById('tab-usuario').classList.remove('active');
+    document.getElementById('panel-empleado').style.display = 'none';
+    document.getElementById('panel-usuario').style.display = 'none';
+    document.getElementById('tab-' + tab).classList.add('active');
+    document.getElementById('panel-' + tab).style.display = 'block';
+}
+</script>

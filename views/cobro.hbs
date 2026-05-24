@@ -1,0 +1,104 @@
+{{#if exito}}
+<div class="alerta-exito">Cobro registrado correctamente.</div>
+{{/if}}
+{{#if error}}
+<div class="alerta-error">Ocurrió un error al registrar el cobro.</div>
+{{/if}}
+
+<div class="tabla-wrap">
+    <div class="tabla-header">
+        <span>Inscripciones pendientes de pago</span>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Niño</th>
+                <th>Representante</th>
+                <th>Teléfono</th>
+                <th>Grado</th>
+                <th>Tanda</th>
+                <th>Estado</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each cobros}}
+            <tr>
+                <td>{{nombre_nino}} {{apellido_nino}}</td>
+                <td>{{nombre_representante}} {{apellido_representante}}</td>
+                <td>{{telefono}}</td>
+                <td>{{grado}}</td>
+                <td>{{tanda}}</td>
+                <td>
+                    <span class="badge {{#if (eq estado 'pendiente')}}badge-pendiente{{else}}badge-aprobada{{/if}}">
+                        {{estado}}
+                    </span>
+                </td>
+                <td>
+                    <button class="btn-sm btn-rojo" onclick="abrirFormCobro('{{id_inscripcion}}', '{{nombre_nino}} {{apellido_nino}}', '{{grado}}', '{{tanda}}')">
+                        Registrar pago
+                    </button>
+                </td>
+            </tr>
+            {{else}}
+            <tr>
+                <td colspan="7" class="text-center">No hay inscripciones pendientes de pago</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+<div class="form-wrap" id="form-cobro" style="display:none">
+    <div class="form-encabezado">
+        <span>Registrar pago</span>
+    </div>
+    <div class="form-body">
+        <form action="/api/cobro" method="POST">
+            <input type="hidden" name="id_inscripcion" id="input-id-inscripcion">
+            <input type="hidden" name="id_empleado" value="{{usuario.id}}">
+
+            <div class="info-box">
+                <p>Inscripción seleccionada</p>
+                <span id="info-nino"></span>
+                <p class="nota" id="info-grado"></p>
+            </div>
+
+            <div class="grid2">
+                <div class="campo">
+                    <label>Monto (RD$)</label>
+                    <input type="number" name="monto" placeholder="0.00" step="0.01" required>
+                </div>
+                <div class="campo">
+                    <label>Método de pago</label>
+                    <select name="metodo_pago" required>
+                        <option value="">Seleccionar</option>
+                        <option value="Efectivo">Efectivo</option>
+                        <option value="Transferencia">Transferencia</option>
+                        <option value="Tarjeta">Tarjeta</option>
+                        <option value="Cheque">Cheque</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-footer">
+                <button type="button" class="btn-cancelar" onclick="cerrarFormCobro()">Cancelar</button>
+                <button type="submit" class="btn-guardar">Guardar pago</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+function abrirFormCobro(id, nombre, grado, tanda) {
+    document.getElementById('input-id-inscripcion').value = id;
+    document.getElementById('info-nino').textContent = nombre;
+    document.getElementById('info-grado').textContent = grado + ' — ' + tanda;
+    document.getElementById('form-cobro').style.display = 'block';
+    document.getElementById('form-cobro').scrollIntoView({ behavior: 'smooth' });
+}
+
+function cerrarFormCobro() {
+    document.getElementById('form-cobro').style.display = 'none';
+}
+</script>

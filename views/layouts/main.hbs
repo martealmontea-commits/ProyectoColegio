@@ -1,98 +1,41 @@
-
-    
-    <link rel="stylesheet" href="/css/Estilo.css">
-    <script defer src="/js/script.js"></script>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;800&family=Arima:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" rel="stylesheet">
+    <title>{{titulo}}</title>
+    {{#if css}}
+    <link rel="stylesheet" href="/css/{{css}}">
+    {{/if}}
+</head>
 <body>
-
-    {{> header}}
-
-   <main>
-
-    <section class="hero">
-        <div class="hero-content">
-            <img src="/images/node-30.png" alt="Lema" class="hero-quote">
-           <div class="boton-contenedor">
-             <a href="Informacion.html" class="btn-conoce-mas">
-             <img src="/images/node-45.png" alt="Conoce más" class="btn-conoce-mas">
-            
-            </a>
-            
+{{#if adminLayout}}
+    <div class="admin-wrapper">
+        {{> adminhead}}
+        <div class="admin-content">
+            <div class="topbar">
+                <span class="topbar-title">{{titulo}}</span>
+                <span class="topbar-fecha" id="fecha-actual"></span>
+            </div>
+            <div class="admin-body">
+                {{{body}}}
+            </div>
         </div>
     </div>
-    <img src="/images/node-46.png" alt="Decoración" class="geo-decor">
-        </section>
+{{else}}
+    {{> header}}
+    {{{body}}}
+    {{> footer}}
+{{/if}}
 
-    <section id="filosofia" class="philosophy">
-        <div class="profile-card">
-            <img src="/images/node-32.png" alt="Narciso E. González" class="profile-img">
-            <div class="profile-text-fix">
-                <div style="margin-top: 20px;"></div>
-                <h3>Narciso E. González</h3>
-                <p>Coordinador Académico</p>
-            </div>
-        </div>
-        <div class="philosophy-text">
-            <h2 class="text-red">Nuestra Filosofía</h2>
-            <p>El hombre se conoce a sí mismo sólo dentro de él mismo y se da cuenta de sí mismo sólo dentro del mundo. Cada nuevo objeto que reconocemos verdaderamente descubre un nuevo órgano dentro de nosotros. Cada persona lleva dentro de sí a toda la humanidad, porque no hay nada en el otro que no podamos sentir dentro de nosotros mismos. Sólo cuando hayamos tomado conciencia plena de nuestra condición humana podremos defender el don preciado de la vida.</p>
-        </div>
-    </section>
-
-    <section class="objectives">
-        <h2>Objetivos</h2>
-        <ul class="objectives-list">
-            <li>Construir prácticas educativas que capaciten a alumnos y alumnas para desenmascarar las dinámicas políticas, históricas y semióticas que condicionan nuestras interpretaciones, expectativas y posibilidades de intervenir en la realidad.</li>
-            <li>Enseñar a leer, a escribir bien, a hablar en público y a dialogar sabiendo expresar las opiniones y argumentando sin violencia.</li>
-            <li>Inculcar el hábito de la lectura sin que suponga un castigo, sino una experiencia que recupera un factor esencial de la condición humana y que proporciona un deleite.</li>
-            <li>Articular el centro de estudio con el sector productivo local, regional y nacional.</li>
-            <li>Poner énfasis en la polivalencia de los conocimientos que se transmitan.</li>
-            <li>Desarrollar una mente investigadora y un enfoque científico de los problemas.</li>
-            <li>Aplicar un conocimiento abstracto a situaciones concretas.</li>
-            <li>Detectar nuestras propias condiciones y tratar de superarlas.</li>
-        </ul>
-    </section>
-
-    <section class="social-connect">
-        <h2>¡Conecta con Nosotros!</h2>
-        <div class="social-icons">
-            <a href="https://www.instagram.com/colegiopadreemilianotardif/" target="_blank"><img src="/images/node-19.png" alt="Instagram"></a>
-            <a href="https://www.youtube.com/@colegiopadreemilianotardif2185" target="_blank"><img src="/images/node-17.png" alt="YouTube"></a>
-            <a href="https://www.facebook.com/profile.php?id=100010089813918" target="_blank"><img src="/images/node-18.png" alt="Facebook"></a>
-            <a href="https://wa.me/8099211372" target="_blank"><img src="/images/node-20.png" alt="WhatsApp"></a>
-        </div>
-    </section>
-
-    <section class="contact-details">
-        <div class="info-grid">
-            <div class="info-item">
-                <img src="/images/node-22.png" alt="Logo mini" class="mini-logo">
-                <div>
-                    <strong>Correo electrónico</strong>
-                    <p>colegiopadreemilianotardif@hotmail.com</p>
-                </div>
-            </div>
-            <div class="info-item">
-                <span>📞</span>
-                <div>
-                    <strong>Teléfonos</strong>
-                    <p>809-921-1372, 809-921-1363</p>
-                </div>
-            </div>
-            <div class="info-item">
-                <span>📍</span>
-                <div>
-                    <strong>Ubicación</strong>
-                    <p>C/Penetración #1, Jardines del Yaque, Santiago, R.D.</p>
-                </div>
-            </div>
-        </div>
-        <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.333!2d-70.697!3d19.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDI3JzAwLjAiTiA3MMKwNDEnNDkuMiJX!5e0!3m2!1ses!2sdo!4v1620000000000!5m2!1ses!2sdo" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-    </section>
-</main>
-
-  {{> footer}}
-
+<script>
+    const fecha = new Date();
+    const opciones = { weekday:'long', year:'numeric', month:'long', day:'numeric' };
+    document.getElementById('fecha-actual') && (document.getElementById('fecha-actual').textContent = fecha.toLocaleDateString('es-DO', opciones));
+</script>
 </body>
-
-
+</html>

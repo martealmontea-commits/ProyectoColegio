@@ -1,0 +1,108 @@
+{{#if exito}}
+<div class="alerta-exito">Cita actualizada correctamente.</div>
+{{/if}}
+{{#if error}}
+<div class="alerta-error">Ocurrió un error al actualizar la cita.</div>
+{{/if}}
+
+<div class="tabla-wrap">
+    <div class="tabla-header">
+        <span>Citas pendientes</span>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Teléfono</th>
+                <th>Email</th>
+                <th>Mensaje</th>
+                <th>Estado</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each citas}}
+            <tr>
+                <td>{{nombre}}</td>
+                <td>{{telefono}}</td>
+                <td>{{email}}</td>
+                <td style="font-size:12px;color:#9E9E9E">{{mensaje}}</td>
+                <td>
+                    <span class="badge {{#if (eq estado 'pendiente')}}badge-pendiente{{else if (eq estado 'atendida')}}badge-atendida{{else}}badge-cancelada{{/if}}">
+                        {{estado}}
+                    </span>
+                </td>
+                <td>
+                    <button class="btn-sm btn-rojo" onclick="abrirFormCita('{{id_cita}}', '{{nombre}}', '{{telefono}}', '{{email}}', '{{mensaje}}')">
+                        Gestionar
+                    </button>
+                </td>
+            </tr>
+            {{else}}
+            <tr>
+                <td colspan="6" class="text-center">No hay citas pendientes</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+<div class="form-wrap" id="form-cita" style="display:none">
+    <div class="form-encabezado">
+        <span>Gestionar cita</span>
+    </div>
+    <div class="form-body">
+        <form action="/api/actualizar-cita" method="POST">
+            <input type="hidden" name="id_cita" id="input-id-cita">
+            <input type="hidden" name="id_empleado" value="{{usuario.id}}">
+
+            <div class="info-box">
+                <p>Solicitante</p>
+                <span id="info-nombre-cita"></span>
+                <div style="display:flex;gap:20px;margin-top:8px">
+                    <div>
+                        <p>Teléfono</p>
+                        <span id="info-telefono-cita" style="font-size:13px;font-weight:500;color:#1a1a1a"></span>
+                    </div>
+                    <div>
+                        <p>Email</p>
+                        <span id="info-email-cita" style="font-size:13px;font-weight:500;color:#1a1a1a"></span>
+                    </div>
+                </div>
+                <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e0e0e0;font-size:13px;color:#1a1a1a" id="info-mensaje-cita"></div>
+            </div>
+
+            <div class="grid2">
+                <div class="campo">
+                    <label>Nuevo estado</label>
+                    <select name="nuevo_estado" required>
+                        <option value="">Seleccionar</option>
+                        <option value="atendida">Atendida</option>
+                        <option value="cancelada">Cancelada</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-footer">
+                <button type="button" class="btn-cancelar" onclick="cerrarFormCita()">Cancelar</button>
+                <button type="submit" class="btn-guardar">Guardar cambio</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+function abrirFormCita(id, nombre, telefono, email, mensaje) {
+    document.getElementById('input-id-cita').value = id;
+    document.getElementById('info-nombre-cita').textContent = nombre;
+    document.getElementById('info-telefono-cita').textContent = telefono;
+    document.getElementById('info-email-cita').textContent = email;
+    document.getElementById('info-mensaje-cita').textContent = mensaje;
+    document.getElementById('form-cita').style.display = 'block';
+    document.getElementById('form-cita').scrollIntoView({ behavior: 'smooth' });
+}
+
+function cerrarFormCita() {
+    document.getElementById('form-cita').style.display = 'none';
+}
+</script>

@@ -1,13 +1,15 @@
-
 :root {
-    --rojo: #b72025;
-    --amarillo: #f4d21f;
-    --blanco: #ffffff;
+    --rojo: #C62828; 
+    --rojo-oscuro: #8E1B1B;
+    --amarillo: #F4D21F;
+    --blanco: #FFFFFF;
+    --negro: #000000;
 }
+
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body {
+.cuerpo {
     font-family: 'Abhaya Libre', serif;
     background-color: var(--blanco);
     overflow-x: hidden;
@@ -21,12 +23,12 @@ body {
     height: 80px; 
     z-index: 1000;
     
-   
+    
     background-color: rgba(198, 40, 40, 0.85); 
     backdrop-filter: blur(15px); 
-    -webkit-backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px);
     
-   
+    
     border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
     
     display: flex; 
@@ -61,13 +63,23 @@ body {
     font-size: 1.1rem; 
 }
 
-/* Botón de teléfono redondo y más grande como en image_4.png */
+
 .contact-phone { 
     color: white; 
     font-weight: bold; 
-    background: rgba(0,0,0,0.25); /* Un poco más oscuro */
+    background: rgba(0,0,0,0.25); 
     padding: 10px 25px; 
-    border-radius: 50px; /* Más redondo */
+    border-radius: 50px; 
+}
+
+
+.hero {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+    padding: 50px 5%;
+    min-height: 80vh;
 }
 
 /* --- CONTENIDO --- */
@@ -107,7 +119,3 @@ body {
     border: none; border-radius: 8px; cursor: pointer; font-size: 1.1rem;
 }
 .btn-submit:hover { background: var(--rojo); }
-
-/* Acreditaciones */
-.acreditaciones-section { padding: 60px; text-align: center; border-top: 1px solid #eee; }
-.footer-logos { max-width: 900px; width: 100%; margin-top: 20px; }

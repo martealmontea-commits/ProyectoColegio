@@ -9,7 +9,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body {
+.cuerpo {
     font-family: 'Abhaya Libre', serif;
     background-color: var(--blanco);
     overflow-x: hidden;
@@ -97,14 +97,17 @@ body {
 .hero-quote {
     max-width: 500px;
     height: auto;
+    position: relative;
+    z-index: 5;
     
 }
-
 
 .btn-conoce-mas {
     width: 480px; 
     height: auto;
     transition: transform 0.3s ease;
+    position: relative;
+    z-index: 10;
 }
 
 .btn-conoce-mas:hover {
@@ -114,7 +117,7 @@ body {
 .geo-decor {
     position: absolute;
     right: 0;
-    top: 187%;
+    top: 104%;
     transform: translateY(-50%);
     z-index: 1;
     pointer-events: none;
@@ -162,5 +165,9 @@ body {
     .philosophy, .hero, .info-grid { flex-direction: column; text-align: center; }
     .hero-content { align-items: center; }
     .objectives-list { columns: 1; }
-    .nav-links { display: none; } 
-}
+    .nav-links { display: none;
+     } 
+         .btn-conoce-mas{
+        position: relative;
+        z-index: 10;
+} }

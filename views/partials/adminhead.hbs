@@ -1,0 +1,43 @@
+<div class="sidebar">
+    <div class="sidebar-logo">
+        <img src="/images/logo.png" alt="Logo" class="sidebar-logo-img">
+        <div class="sidebar-logo-text">
+            <span>Colegio Padre</span>
+            <span>Emiliano Tardif</span>
+        </div>
+    </div>
+
+    <nav class="sidebar-nav">
+        <p class="nav-label">General</p>
+        <a href="/admin" class="nav-item {{#if dashboardActivo}}active{{/if}}">
+            <i class="ti ti-layout-dashboard"></i> Dashboard
+        </a>
+
+        <p class="nav-label">Módulos</p>
+        <a href="/moduloins" class="nav-item {{#if inscripcionesActivo}}active{{/if}}">
+            <i class="ti ti-forms"></i> Inscripciones
+        </a>
+        <a href="/cobros" class="nav-item {{#if cobrosActivo}}active{{/if}}">
+            <i class="ti ti-cash"></i> Cobros
+        </a>
+        <a href="/citas" class="nav-item {{#if citasActivo}}active{{/if}}">
+            <i class="ti ti-calendar"></i> Citas
+        </a>
+
+        <p class="nav-label">Administración</p>
+        <a href="/crear" class="nav-item {{#if crearActivo}}active{{/if}}">
+            <i class="ti ti-users"></i> Empleados y usuarios
+        </a>
+    </nav>
+
+    <div class="sidebar-footer">
+        <div class="sidebar-avatar">{{primeraletra usuario.nombre}}</div>
+        <div class="sidebar-footer-info">
+            <span class="sidebar-footer-nombre">{{usuario.nombre}}</span>
+            <span class="sidebar-footer-rol">{{usuario.rol}}</span>
+        </div>
+        <a href="/logout" class="sidebar-logout">
+            <i class="ti ti-logout"></i>
+        </a>
+    </div>
+</div>
